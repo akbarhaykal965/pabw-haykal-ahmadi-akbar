@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rekomendasi Tempat Nongkrong</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <figure>
+  <img
+    src="Kopi.jpg"
+    alt="Logo kopi untuk halaman rekomendasi tempat nongkrong"
+    width="300"
+    height="300"
+    loading="lazy"
+  >
+  <figcaption>Logo Rekomendasi Tempat Nongkrong</figcaption>
+</figure>
+
+    <h1>Rekomendasi Tempat Nongkrong</h1>
+
+    <!-- Navigasi -->
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li>
+          <a href="#daftar-tempat">Daftar Tempat</a>
+        </li>
+
+        <li>
+          <a href="#tips-memilih">Tips Memilih</a>
+        </li>
+
+        <li>
+          <a href="#tambah-rekomendasi">Tambah Rekomendasi</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Isi utama -->
+  <main>
+
+    <!-- Section 1: Daftar tempat -->
+    <section id="daftar-tempat">
+
+      <h2>Daftar Tempat Nongkrong</h2>
+
+      <p>
+        Berikut beberapa rekomendasi tempat nongkrong yang
+        nyaman untuk belajar, santai, dan bermain dengan teman.
+      </p>
+
+      <!-- Tabel rekomendasi -->
+      <table>
+
+        <caption>
+          Rekomendasi Tempat Nongkrong di Indonesia
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Nama Tempat</th>
+            <th scope="col">Lokasi</th>
+            <th scope="col">Kisaran Harga</th>
+            <th scope="col">Rating</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Anak Panah</td>
+            <td>Semarang</td>
+            <td>Rp20.000 - Rp50.000</td>
+            <td>4,5/5</td>
+          </tr>
+
+          <tr>
+            <td>Bento</td>
+            <td>Yogyakarta</td>
+            <td>Rp20.000 - Rp50.000</td>
+            <td>4/5</td>
+          </tr>
+
+          <tr>
+            <td>Cold N Brew</td>
+            <td>Yogyakarta</td>
+            <td>Rp25.000 - Rp50.000</td>
+            <td>5/5</td>
+          </tr>
+
+          <tr>
+            <td>C28</td>
+            <td>Yogyakarta</td>
+            <td>Rp20.000 - Rp50.000</td>
+            <td>3/5</td>
+          </tr>
+
+          <tr>
+            <td>Kota Lama</td>
+            <td>Banjarmasin</td>
+            <td>Rp20.000 - Rp50.000</td>
+            <td>4/5</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+
+    <!-- Section 2: Tips memilih -->
+    <section id="tips-memilih">
+
+      <h2>Tips Memilih Tempat Nongkrong</h2>
+
+      <p>
+        Pilih tempat nongkrong sesuai kebutuhan dan aktivitas
+        yang ingin dilakukan.
+      </p>
+
+      <ul>
+        <li>Pilih lokasi yang mudah dijangkau.</li>
+        <li>Perhatikan kisaran harga makanan dan minuman.</li>
+        <li>Pilih tempat yang nyaman untuk belajar atau bersantai.</li>
+        <li>Perhatikan fasilitas seperti Wi-Fi dan tempat duduk.</li>
+        <li>Periksa rating dan ulasan sebelum berkunjung.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- Section 3: Tambah rekomendasi -->
+    <!-- Section 3: Tambah rekomendasi -->
+<section id="tambah-rekomendasi">
+
+  <h2>Tambah Rekomendasi</h2>
+
+  <p>
+    Bagikan tempat nongkrong favorit kamu dengan mengisi
+    form rekomendasi.
+  </p>
+
+  <form action="#" method="post">
+
+    <!-- Nama tempat -->
+    <p>
+      <label for="nama-tempat">Nama Tempat:</label><br>
+      <input
+        type="text"
+        id="nama-tempat"
+        name="nama-tempat"
+        placeholder="Contoh: Anak Panah"
+        required
+      >
+    </p>
+
+    <!-- Lokasi -->
+    <p>
+      <label for="lokasi">Lokasi:</label><br>
+      <input
+        type="text"
+        id="lokasi"
+        name="lokasi"
+        placeholder="Contoh: Yogyakarta"
+        required
+      >
+    </p>
+
+    <!-- Kategori -->
+    <p>
+      <label for="kategori">Kategori:</label><br>
+      <select
+        id="kategori"
+        name="kategori"
+        required
+      >
+        <option value="">-- Pilih kategori --</option>
+        <option value="cafe">Cafe</option>
+        <option value="restoran">Restoran</option>
+        <option value="ruang-belajar">Ruang Belajar</option>
+        <option value="tempat-santai">Tempat Santai</option>
+      </select>
+    </p>
+
+    <!-- Suasana -->
+    <p>
+      <label for="suasana">Suasana:</label><br>
+      <select
+        id="suasana"
+        name="suasana"
+      >
+        <option value="">-- Pilih suasana --</option>
+        <option value="tenang">Tenang</option>
+        <option value="nyaman">Nyaman</option>
+        <option value="ramai">Ramai</option>
+        <option value="santai">Santai</option>
+      </select>
+    </p>
+
+    <!-- Rating -->
+    <p>
+      <label for="rating">Rating:</label><br>
+      <input
+        type="number"
+        id="rating"
+        name="rating"
+        min="1"
+        max="5"
+        step="0.1"
+        placeholder="Contoh: 4.5"
+        required
+      >
+    </p>
+
+    <!-- Deskripsi -->
+    <p>
+      <label for="deskripsi">Deskripsi:</label><br>
+      <textarea
+        id="deskripsi"
+        name="deskripsi"
+        rows="5"
+        cols="40"
+        placeholder="Ceritakan tempat nongkrong tersebut..."
+      ></textarea>
+    </p>
+
+    <!-- Tanggal -->
+    <p>
+      <label for="tanggal">Tanggal Rekomendasi:</label><br>
+      <input
+        type="date"
+        id="tanggal"
+        name="tanggal"
+      >
+    </p>
+
+    <!-- Tombol -->
+    <p>
+      <button type="submit">Kirim Rekomendasi</button>
+      <button type="reset">Reset</button>
+    </p>
+
+  </form>
+
+</section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Haykal Ahmadi Akbar · 25523161 · 2026
+    </p>
+  </footer>
+
+</body>
+
+</html>
