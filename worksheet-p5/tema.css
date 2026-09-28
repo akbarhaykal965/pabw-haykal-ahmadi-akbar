@@ -1,0 +1,93 @@
+/* ========================================
+   MODE TERANG
+   ======================================== */
+
+body.mode-terang {
+    background-color: #f8f5f0;
+    color: #3e2723;
+}
+
+body.mode-terang h1,
+body.mode-terang h2,
+body.mode-terang h3 {
+    color: #3e2723;
+}
+
+body.mode-terang nav a {
+    color: blue;
+}
+
+body.mode-terang .kartu {
+    background-color: #fffdf9;
+    border-color: #d7ccc8;
+}
+
+body.mode-terang .form-kolom input,
+body.mode-terang .form-kolom select,
+body.mode-terang .form-kolom textarea {
+    background-color: #fffdf9;
+    color: #3e2723;
+    border-color: #d7ccc8;
+}
+
+body.mode-terang footer {
+    background-color: #fffdf9;
+    color: #3e2723;
+}
+
+.pilihan-tema {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   MODE GELAP
+   ======================================== */
+
+body.mode-gelap {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.mode-gelap h1,
+body.mode-gelap h2,
+body.mode-gelap h3 {
+    color: #f5f5f5;
+}
+
+body.mode-gelap nav a {
+    color: #90caf9;
+}
+
+body.mode-gelap .kartu {
+    background-color: #2b2b2b;
+    border-color: #555;
+}
+
+body.mode-gelap .form-kolom input,
+body.mode-gelap .form-kolom select,
+body.mode-gelap .form-kolom textarea {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+    border-color: #666;
+}
+
+body.mode-gelap footer {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+}
+
+/* ========================================
+   FOCUS / FOKUS KEYBOARD
+   ======================================== */
+
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #ffc107;
+    outline-offset: 2px;
+}
