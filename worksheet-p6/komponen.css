@@ -1,0 +1,124 @@
+/* ========================================
+   FORM
+   ======================================== */
+
+.form-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-kolom p {
+    margin-bottom: var(--space-2);
+}
+
+label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    font: inherit;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-fg);
+}
+
+/* Ukuran kolom form */
+.form-kolom input,
+.form-kolom select {
+    width: 100%;
+    max-width: 20rem;
+}
+
+.form-kolom textarea {
+    width: 100%;
+    max-width: 30rem;
+    resize: vertical;
+}
+
+/* Tombol */
+button {
+    font: inherit;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+
+/* ========================================
+   FOCUS KEYBOARD
+   ======================================== */
+
+:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+
+/* ========================================
+   VALIDASI FORM
+   ======================================== */
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--color-danger);
+    border-width: 2px;
+}
+
+.pesan-galat {
+    display: none;
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+.form-kolom:has(:user-invalid) .pesan-galat {
+    display: block;
+}
+
+/* ========================================
+   GALERI
+   ======================================== */
+
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-4);
+}
+
+.kartu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-1);
+    padding: var(--card-pad);
+
+    min-width: 0;
+}
+
+.kartu h3,
+.kartu p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.galeri .kartu {
+    align-content: start;
+    min-height: 14rem;
+}

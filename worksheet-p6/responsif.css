@@ -1,0 +1,58 @@
+/* ========================================
+   RESPONSIF - MOBILE FIRST
+   ======================================== */
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+/* ========================================
+   TITIK HENTI
+   ======================================== */
+
+/* Tablet: galeri menjadi 2 kolom */
+@media (min-width: 48rem) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: galeri menjadi 3 kolom */
+@media (min-width: 60rem) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ========================================
+   ISI YANG MENYESUAIKAN - BAGIAN D.1
+   ======================================== */
+
+/* Gambar tidak melebihi wadahnya */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tabel lebar dapat digulir sendiri */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* Ukuran teks mengikuti ukuran huruf pengguna */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
