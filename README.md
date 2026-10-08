@@ -18,9 +18,14 @@ Topik halaman saya: Rekomendasi tempat nongkrong.
 
 Bagian yang dibantu AI:
 - Membantu menyusun struktur HTML dan memberikan contoh kode.
+- Membantu menjelaskan konsep JavaScript modern seperti const, let, template literal, object, array, map, filter, dan find.
+- Membantu memberikan contoh penggunaan fungsi dan array methods pada app.js.
 
 Bagian yang saya kerjakan sendiri:
 - Memilih topik rekomendasi tempat nongkrong.
-- Menentukan isi tabel dan form.
+- Menentukan isi data profil dan daftar proyek.
 - Menyesuaikan isi halaman dengan rencana saya.
+- Menulis dan menyesuaikan kode app.js dengan halaman saya.
 - Menjalankan dan memeriksa hasil halaman di browser.
+- Membaca hasil Console dan memperbaiki kesalahan kode.
+- Menguji breakpoint menggunakan DevTools.
