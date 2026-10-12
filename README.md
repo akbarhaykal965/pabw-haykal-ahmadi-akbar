@@ -29,3 +29,32 @@ Bagian yang saya kerjakan sendiri:
 - Menjalankan dan memeriksa hasil halaman di browser.
 - Membaca hasil Console dan memperbaiki kesalahan kode.
 - Menguji breakpoint menggunakan DevTools.
+
+## Pertemuan 9 — DOM, Event, dan Interaktivitas
+
+Topik: Menampilkan daftar proyek secara dinamis dan membuat halaman lebih interaktif menggunakan JavaScript DOM dan event.
+
+- Pemilihan elemen DOM menggunakan `querySelector()` dan `querySelectorAll()`.
+- Membuat elemen HTML menggunakan `document.createElement()`, mengisi teks dengan `textContent`, dan menambahkan elemen menggunakan `append()`.
+- Mengosongkan daftar sebelum menampilkan data kembali menggunakan `textContent = ""`.
+- Menampilkan daftar proyek berdasarkan kategori menggunakan filter.
+- Menerapkan event delegation menggunakan `addEventListener()`, `event.target`, dan `closest()`.
+- Menampilkan pesan ketika tidak ada proyek yang sesuai dengan kategori.
+- Melakukan validasi form menggunakan `preventDefault()`, `trim()`, `aria-invalid`, dan pengaturan tombol kirim.
+- Menguji halaman melalui browser DevTools, Console, dan Event Listeners.
+- Menyiapkan tangkapan layar sebagai bukti pengujian.
+
+### Catatan penggunaan AI — Pertemuan 9
+
+Bagian yang dibantu AI:
+- Membantu menjelaskan konsep DOM, event delegation, dan validasi form.
+- Memberikan contoh kode JavaScript untuk menampilkan dan memfilter daftar proyek.
+- Membantu memeriksa serta memperbaiki kesalahan kode berdasarkan hasil pengujian.
+
+Bagian yang saya kerjakan sendiri:
+- Menyesuaikan kode dengan struktur HTML proyek saya.
+- Menjalankan halaman menggunakan Live Server.
+- Menguji tombol filter kategori Semua, Web, dan Data.
+- Memeriksa elemen DOM dan event listener melalui DevTools.
+- Menguji pesan daftar kosong dan validasi form.
+- Menyiapkan tangkapan layar hasil pengujian.
