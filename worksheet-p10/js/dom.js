@@ -1,3 +1,4 @@
+
 import { profil } from "./app.js";
 import { muatProyek } from "./api.js";
 
@@ -9,23 +10,23 @@ console.log("Profil:", profil);
 const daftar = document.querySelector("#daftar");
 const tombolFilter = document.querySelectorAll("#filter button");
 const pesanKosong = document.querySelector("#pesan-kosong");
+const pesanMuat = document.querySelector("#muat");
 const barisFilter = document.querySelector("#filter");
 
+// Data proyek yang berhasil dimuat
 let daftarProyek = [];
 
-// Fungsi untuk menandai tombol yang sedang aktif
+// Menandai tombol filter yang sedang aktif
 function tandaiTombolAktif(tombolAktif) {
     tombolFilter.forEach((tombol) => {
         tombol.classList.toggle("aktif", tombol === tombolAktif);
     });
 }
 
-// Fungsi untuk menampilkan proyek
+// Menampilkan daftar proyek
 function render(data) {
-    // 1. Kosongkan wadah terlebih dahulu
     daftar.textContent = "";
 
-    // 2. Periksa apakah data kosong
     if (data.length === 0) {
         pesanKosong.hidden = false;
         return;
@@ -33,7 +34,6 @@ function render(data) {
 
     pesanKosong.hidden = true;
 
-    // 3. Tampilkan proyek
     data.forEach((proyek) => {
         const item = document.createElement("li");
         item.className = "kartu";
@@ -42,18 +42,18 @@ function render(data) {
     });
 }
 
-// Event delegation: satu listener pada induk #filter
+// Event delegation untuk tombol filter
 barisFilter.addEventListener("click", (event) => {
     const tombol = event.target.closest("button");
 
-    if (!tombol || !barisFilter.contains(tombol)) return;
+    if (!tombol || !barisFilter.contains(tombol)) {
+        return;
+    }
 
     const kategori = tombol.dataset.kategori;
 
-    // Menandai tombol aktif
     tandaiTombolAktif(tombol);
 
-    // Memilih proyek sesuai kategori
     const proyekTerpilih = daftarProyek.filter((proyek) => {
         return kategori === "semua" || proyek.kategori === kategori;
     });
@@ -63,6 +63,10 @@ barisFilter.addEventListener("click", (event) => {
 
 // Memuat proyek dari file JSON
 async function mulai() {
+    pesanMuat.hidden = false;
+    pesanKosong.hidden = true;
+    daftar.textContent = "";
+
     try {
         daftarProyek = await muatProyek();
 
@@ -72,6 +76,8 @@ async function mulai() {
         console.error("Gagal memuat proyek:", error);
         daftar.textContent = "Gagal memuat data proyek.";
         pesanKosong.hidden = true;
+    } finally {
+        pesanMuat.hidden = true;
     }
 }
 
@@ -80,6 +86,7 @@ mulai();
 // Validasi form rekomendasi
 const formRekomendasi = document.querySelector("#form-rekomendasi");
 const tombolKirim = formRekomendasi.querySelector('button[type="submit"]');
+
 const kolomWajib = [
     document.querySelector("#nama-tempat"),
     document.querySelector("#lokasi"),
@@ -87,8 +94,10 @@ const kolomWajib = [
     document.querySelector("#rating")
 ];
 
+const kolomRating = document.querySelector("#rating");
 const pesanRating = document.querySelector("#galat-rating");
 
+// Memeriksa kelengkapan dan validitas form
 function periksaForm() {
     let sah = true;
     let kolomPertamaError = null;
@@ -106,11 +115,13 @@ function periksaForm() {
 
         if (!valid) {
             sah = false;
-            if (!kolomPertamaError) kolomPertamaError = kolom;
+
+            if (!kolomPertamaError) {
+                kolomPertamaError = kolom;
+            }
         }
     });
 
-    const kolomRating = document.querySelector("#rating");
     const nilaiRating = kolomRating.value.trim();
     const ratingValid =
         nilaiRating !== "" &&
@@ -120,17 +131,17 @@ function periksaForm() {
     pesanRating.hidden = ratingValid;
 
     tombolKirim.disabled = !sah;
+
     return { sah, kolomPertamaError };
 }
 
-// Periksa saat pengguna mengetik atau memilih
+// Memeriksa form ketika pengguna mengetik atau memilih
 kolomWajib.forEach((kolom) => {
     kolom.addEventListener("input", periksaForm);
     kolom.addEventListener("change", periksaForm);
 });
 
-```javascript
-// Cegah halaman dimuat ulang ketika form dikirim
+// Mencegah halaman dimuat ulang saat form dikirim
 formRekomendasi.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -144,10 +155,10 @@ formRekomendasi.addEventListener("submit", (event) => {
     alert("Form valid! Rekomendasi siap diproses.");
 });
 
-// Periksa ulang validasi setelah tombol Reset diklik
+// Memeriksa kembali validasi setelah tombol Reset diklik
 formRekomendasi.addEventListener("reset", () => {
     setTimeout(periksaForm, 0);
 });
 
+// Memeriksa kondisi form saat halaman pertama kali dibuka
 periksaForm();
-```
