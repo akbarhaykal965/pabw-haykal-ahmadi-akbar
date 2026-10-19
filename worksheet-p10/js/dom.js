@@ -1,4 +1,3 @@
-
 import { profil } from "./app.js";
 import { muatProyek } from "./api.js";
 
@@ -15,13 +14,6 @@ const barisFilter = document.querySelector("#filter");
 
 // Data proyek yang berhasil dimuat
 let daftarProyek = [];
-
-// Menandai tombol filter yang sedang aktif
-function tandaiTombolAktif(tombolAktif) {
-    tombolFilter.forEach((tombol) => {
-        tombol.classList.toggle("aktif", tombol === tombolAktif);
-    });
-}
 
 // Menampilkan daftar proyek
 function render(data) {
