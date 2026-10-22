@@ -105,4 +105,54 @@ Materi dan fitur yang dikerjakan:
 - Memisahkan kode menjadi 5 modul ES mandiri: `data.js`, `state.js`, `dom.js`, `events.js`, dan `app.js` (dengan tetap memanfaatkan `api.js` dari P10)[cite: 1].
 - Menerapkan jalur impor modular peramban yang diawali `./` dan berakhiran `.js`[cite: 1].
 - Menjadikan objek `state` sebagai sumber kebenaran tunggal (*Single Source of Truth*) dan menerapkan prinsip `Tampilan = f(State)`[cite: 1].
-- Memastikan tidak ada data keadaan yang dibaca atau disimpan menempel pada DOM/elemen HTML
+- Memastikan tidak ada data keadaan yang dibaca atau disimpan menempel pada DOM/elemen HTML.
+- Menyimpan kategori aktif dan daftar favorit ke `localStorage` secara otomatis setiap kali status berubah.
+- Membaca simpanan saat inisialisasi aplikasi menggunakan mekanisme `try/catch` agar aplikasi tidak rusak bila data penyimpanan tidak valid atau rusak.
+- Menambahkan fungsionalitas atur ulang untuk mengembalikan filter ke keadaan awal.
+
+### Catatan Penggunaan AI — Pertemuan 11
+
+**Bagian yang dibantu AI:**
+- Membantu menyusun arsitektur pemisahan berkas modular ES Modules.
+- Memberikan panduan pembuatan fungsi render terpusat murni berbasis state.
+- Menjelaskan implementasi penyimpanan `localStorage` yang aman dari data rusak (*fallback handler*).
+
+**Bagian yang saya kerjakan sendiri:**
+- Memecah skrip menjadi berkas-berkas modular mandiri.
+- Mengatur fungsi `render(state)` dan menghubungkan pendengar event.
+- Menguji fungsionalitas tombol filter dan favorit pada browser.
+- Menguji skenario kerusakan `localStorage` melalui Console.
+- Memeriksa konsistensi tampilan tema terang dan gelap.
+
+## Pertemuan 12 — Migrasi ke Vue.js 3 dan Vite
+
+**Topik:** Memigrasikan arsitektur JavaScript modular dan manipulasi DOM manual ke Single Page Application (SPA) berbasis komponen menggunakan Vue.js 3 dan build tool Vite[cite: 14].
+
+Materi dan fitur yang dikerjakan:
+
+- Menginisialisasi proyek modern menggunakan Vite dengan templat resmi Vue (`npm create vite@latest . -- --template vue`)[cite: 14].
+- Memecah antarmuka menjadi empat Single File Component (SFC) mandiri pada folder `src/components/`: `KepalaProfil.vue`, `TombolFilter.vue`, `DaftarProyek.vue`, dan `FormKontak.vue`[cite: 3].
+- Menerapkan pengiriman data dari induk ke anak melalui *props* pada `KepalaProfil.vue` dengan prinsip aliran data satu arah (*one-way data flow*)[cite: 3, 14].
+- Mengonversi `src/state.js` menggunakan objek `reactive` dari Vue tanpa logika manipulasi DOM manual[cite: 3].
+- Menghubungkan pemuatan data asinkron via `muatProyek()` dari GitHub Raw menggunakan siklus hidup `onMounted` di `App.vue`[cite: 3].
+- Memanfaatkan `watch` dengan opsi `{ deep: true }` untuk menyimpan perubahan status kategori dan penanda favorit ke `localStorage` secara otomatis[cite: 3].
+- Memperbaiki logika fungsi `aturUlang()` agar mengembalikan kategori ke `semua` sekaligus mengosongkan status bintang favorit.
+- Mengompilasi proyek untuk produksi menggunakan `npm run build` dan memverifikasi hasil bundel folder `dist/` menggunakan `npx vite preview`[cite: 13, 14].
+- Memastikan direktori `node_modules/` dan `dist/` diabaikan oleh Git melalui `.gitignore`[cite: 1, 14].
+
+### Catatan Penggunaan AI — Pertemuan 12
+
+**Bagian yang dibantu AI:**
+- Membantu pemecahan arsitektur komponen SFC dan konfigurasi templat Vue.
+- Membantu menelusuri dan mendiagnosis pesan galat pada Console DevTools (kesalahan impor berkas, *case sensitivity*, dan sisa pemanggilan render lama).
+- Memberikan panduan penggunaan fungsi reaktivitas Vue (`reactive`, `onMounted`, `watch`).
+- Membantu menyusun jawaban pertanyaan evaluasi lembar kerja.
+
+**Bagian yang saya kerjakan sendiri:**
+- Menjalankan instalasi dan inisialisasi lingkungan kerja Vite di terminal.
+- Membuat dan menyusun keempat berkas Single File Component di dalam `src/components/`[cite: 3].
+- Memperbaiki saltik nama berkas komponen (`FromKontak.vue` menjadi `FormKontak.vue`).
+- Mengganti isi berkas `src/state.js` dan menyelaraskan fungsi impor pada `src/App.vue`.
+- Menguji interaktivitas filter, penanda bintang favorit, dan tombol atur ulang di peramban.
+- Melakukan verifikasi build produksi melalui `vite preview` dan memeriksa tab Network DevTools[cite: 13].
+- Menjalankan commit dan push riwayat pekerjaan ke repositori GitHub.
